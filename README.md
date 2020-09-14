@@ -26,9 +26,18 @@ After this, follow the installation instructions:
 
 Place templates folder in an easy-to-refer-to directory on your computer. (Mine are in ~/Documents/templates)
 
-### Usage ###
+### Use ###
 
+Once everything is set up, the command for creating something from a template is `cookiecutter <templatename>`. An example of creating a class looks like the following:
 
+`cookiecutter class`
+
+Available templates:
+
+- `class` (file)
+- `cookiecutter` (bare bones)
+- `module` (directory setup)
+- `project` (a VERY SIMPLE pipenv project)
 
 ## VS Code Snippets ##
 
