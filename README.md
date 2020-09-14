@@ -39,6 +39,18 @@ Available templates:
 - `module` (directory setup)
 - `project` (a VERY SIMPLE pipenv project)
 
+### Project Template Dependency ###
+
+In order to use the project template, you must have pipenv installed.
+
+To install pipenv, use the following command:
+
+`pip install pipenv`
+
+The project is a full isolated Python project using pipenv for dependency management.  For more on pipenv, look here:
+
+[pipenv](https://pipenv-fork.readthedocs.io/en/latest/)
+
 ## VS Code Snippets ##
 
 ### Installation ###
