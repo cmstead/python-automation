@@ -1,0 +1,65 @@
+{
+	"Class": {
+		"prefix": "class-extended",
+		"body": [
+			"class ${1/^([a-z])/${1:/upcase}/}${2:(${3:ParentClass})}:",
+			"    ${4:pass}"
+		],
+		"description": "Extended class snippet -- easier to ignore derivation"
+	},
+
+	"Constructor": {
+		"prefix": "ctor",
+		"body": [
+			"def __init__(self${2:, ${3:parameters}}):",
+			"    ${3/(, )?([^, ]+)/self.$2 = $2\n        /g}",
+		],
+		"description": "Simple class setup"
+	},
+
+	"Method": {
+		"prefix": "method",
+		"body": [
+			"def ${1/([A-Z])/_${1:/downcase}/}(${2|self,cls|}, ${3:parameters}):",
+			"    ${4:pass}"
+		],
+		"description": "Simple method definition"
+	},
+
+	"Function": {
+		"prefix": "function",
+		"body": [
+			"def ${1/([A-Z])/_${1:/downcase}/}(${2:parameters}):",
+			"    ${3:pass}"
+		],
+		"description": "Simple function definition"
+	},
+
+	"DI Class": {
+		"prefix": "di-class",
+		"body": [
+			"class ${TM_FILENAME_BASE/(^[A-Z])/${1:/upcase}/}:",
+			"    ${2:pass}",
+			"",
+			"def get${1/([A-Z])/_${1:/downcase}/g}():",
+			"    return $1($4)"
+		],
+		"description": "Class with DI-related factory function"
+	},
+
+	"Variable": {
+		"prefix": "var",
+		"body": [
+			"${1/([A-Z])/_${1:/downcase}/} = $2"
+		],
+		"description": "Simple variable definition"
+	},
+
+	"Constant": {
+		"prefix": "const",
+		"body": [
+			"${1/(.*)/${1:/upcase}/} = $2"
+		],
+		"description": "Simple constant definition"
+	}
+}
