@@ -4,19 +4,21 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [scripts]
-cli = "python -m {{cookiecutter.project_name}}"
+start = "run.bat"
+freeze = "pip freeze"
 test = "python -m pytest -v --approvaltests-add-reporter='C:\\Program Files\\KDiff3\\kdiff3.exe'"
 
 [dev-packages]
-pylint = "*"
 autopep8 = "*"
 rope = "*"
 pytest = "*"
 approvaltests = "*"
 doubles = "*"
 pytest-approvaltests = "*"
+pylint = "*"
 
 [packages]
+flask = "*"
 {{cookiecutter.project_name}} = {editable = true, path = "."}
 
 [requires]

@@ -37,6 +37,7 @@ Available templates:
 - `class` (file)
 - `cookiecutter` (bare bones)
 - `module` (directory setup)
+- `flask-project` (a VERY SIMPLE pipenv project for flask services)
 - `project` (a VERY SIMPLE pipenv project)
 
 ### Project Template Dependency ###
