@@ -20,7 +20,7 @@
 	"Method": {
 		"prefix": "method",
 		"body": [
-			"def ${1/([A-Z])/_${1:/downcase}/}(${2|self,cls|}, ${3:parameters}):",
+			"def ${1/([A-Z])/_${1:/downcase}/g}(${2|self,cls|}, ${3:parameters}):",
 			"    ${4:pass}"
 		],
 		"description": "Simple method definition"
@@ -29,7 +29,7 @@
 	"Function": {
 		"prefix": "function",
 		"body": [
-			"def ${1/([A-Z])/_${1:/downcase}/}(${2:parameters}):",
+			"def ${1/([A-Z])/_${1:/downcase}/g}(${2:parameters}):",
 			"    ${3:pass}"
 		],
 		"description": "Simple function definition"
@@ -61,5 +61,68 @@
 			"${1/(.*)/${1:/upcase}/} = $2"
 		],
 		"description": "Simple constant definition"
+	},
+
+	"PyTest Test": {
+		"prefix": "pytest-test",
+		"body": [
+			"def test_${1/([A-Z])/_${1:/downcase}/g}():",
+			"    \"\"\"${2:description}\"\"\"",
+			"    ${3:pass}",
+			"    ${4:# Arrange}",
+			"    ${5:# Act}",
+			"    ${6:# Assert}"
+		],
+		"description": "PyTest test case"
+	},
+
+	"PyTest Assert": {
+		"prefix": "pytest-assert",
+		"body": [
+			"assert ${1:assertion}"
+		],
+		"description": "PyTest test assertion"
+	},
+
+	"Test Double Import": {
+		"prefix": "test-double-doubles-import",
+		"body": [
+			"from doubles import InstanceDouble, allow"
+		],
+		"description": "Import doubles library for test double creation"
+	},
+
+	"Create Test Double": {
+		"prefix": "test-double-create",
+		"body": [
+			"${1:test_double_name} = InstanceDouble('${2:object.to.double}')"
+		],
+		"description": "Create a new test double"
+	},
+
+	"Allow Test Double Method Call": {
+		"prefix": "test-double-allow-method-call",
+		"body": [
+			"allow(${1:test_double_name}).${2:method_name}"
+		],
+		"description": "Add call-allow call to test double method"
+	},
+
+	"Approvals Import": {
+		"prefix": "approvals-import",
+		"body": [
+			"import json",
+			"",
+			"from approvaltests.approvals import verify"
+		],
+		"description": "Import necessary libs for approval verification"
+	},
+
+	"Approvals Verify": {
+		"prefix": "approvals-verify",
+		"body": [
+			"verify(json.dumps(${1:result}, sort_keys=${2|True,False|}, indent=${3|2,4|}))"
+		],
+		"description": "Approvals verification expression"
 	}
 }
