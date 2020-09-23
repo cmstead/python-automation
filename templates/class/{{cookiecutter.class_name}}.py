@@ -1,4 +1,5 @@
 class {{cookiecutter.class_name}}:
+    """{{cookiecutter.doc_string}}"""
     def __init__(self):
         pass
 
