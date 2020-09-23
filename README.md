@@ -10,6 +10,12 @@ Snippets can be copied from `./python.json`
 
 ### Installation ###
 
+#### Prerequisite: PipEnv Setup ####
+
+1. Make sure you have Python 3.4 or greater installed.
+2. Make sure PipEnv is installed on your computer. If it isn't, run `pip install pipenv --update`.
+3. Open the root directory of this repository and run `pipenv install`
+
 #### Cookiecutter Installation ####
 
 The templates in this project are built against the Cookiecutter code generation system. To use them, be sure you install Cookiecutter:
@@ -24,7 +30,7 @@ After this, follow the installation instructions:
 
 #### Template Installation ####
 
-Place templates folder in an easy-to-refer-to directory on your computer. (Mine are in ~/Documents/templates)
+Run the command `pipenv run install-templates`
 
 ### Use ###
 
