@@ -77,12 +77,24 @@ These snippets are designed to simply be copied and pasted into the VS Code Pyth
 
 * Note: templates will attempt to normalize your identifiers (variable and function names) to PEP 8 standard.
 
-**Currently included snippets**
+####Currently included snippets####
 
-- `var` -- Variable
-- `const` -- Constant
-- `function` -- Function
+**Source Development**
+
 - `class-extended` -- Class
+- `const` -- Constant
 - `ctor` -- Constructor
-- `method` -- Method
 - `di-class` -- Class with DI factory
+- `function` -- Function
+- `method` -- Method
+- `var` -- Variable
+
+**Test Development**
+
+- `approvals-import` -- Import approvals library into test
+- `approvals-verify` -- Verify output with approvals
+- `pytest-test` -- PyTest test definition
+- `pytest-assert` -- PyTest test assertion
+- `test-double-doubles-import` -- Import for doubles library
+- `test-double-create` -- Create new "doubles" test double
+- `test-double-allow-method-call` -- Add allow call for a test double
