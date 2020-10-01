@@ -1,5 +1,6 @@
 {
 	// Core Python
+	
 	"Class": {
 		"prefix": "class-extended",
 		"body": [
@@ -62,6 +63,14 @@
 			"${1/(.*)/${1:/upcase}/} = $2"
 		],
 		"description": "Simple constant definition"
+	},
+
+	"Import": {
+		"prefix": "import",
+		"body": [
+			"${1:from ${2:package} }import ${3:itemName}"
+		],
+		"description": "Import statement"
 	},
 
 	// PyTest
