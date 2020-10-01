@@ -1,4 +1,5 @@
 {
+	// Core Python
 	"Class": {
 		"prefix": "class-extended",
 		"body": [
@@ -63,6 +64,8 @@
 		"description": "Simple constant definition"
 	},
 
+	// PyTest
+
 	"PyTest Test": {
 		"prefix": "pytest-test",
 		"body": [
@@ -84,16 +87,18 @@
 		"description": "PyTest test assertion"
 	},
 
+	// Doubles setup and use
+
 	"Test Double Import": {
-		"prefix": "test-double-doubles-import",
+		"prefix": "test-double-doubles-import-doubles",
 		"body": [
-			"from doubles import InstanceDouble, allow"
+			"from doubles import InstanceDouble, allow, expect"
 		],
 		"description": "Import doubles library for test double creation"
 	},
 
 	"Create Test Double": {
-		"prefix": "test-double-create",
+		"prefix": "test-double-create-doubles",
 		"body": [
 			"${1:test_double_name} = InstanceDouble('${2:object.to.double}')"
 		],
@@ -101,12 +106,22 @@
 	},
 
 	"Allow Test Double Method Call": {
-		"prefix": "test-double-allow-method-call",
+		"prefix": "test-double-allow-method-call-doubles",
 		"body": [
-			"allow(${1:test_double_name}).${2:method_name}"
+			"allow(${1:test_double_name}).${2:method_name}.${3:${4|and_return_result_of,and_raise,with_args|}($0)}"
 		],
 		"description": "Add call-allow call to test double method"
 	},
+
+	"Expect Test Double Method Call": {
+		"prefix": "test-double-expect-method-call-doubles",
+		"body": [
+			"expect(${1:test_double_name}).${2:method_name}.${3:${4|exactly,once,twice,never|}($0)}"
+		],
+		"description": "Add call-expectation call to test double method"
+	},
+
+	// Approvals
 
 	"Approvals Import": {
 		"prefix": "approvals-import",
