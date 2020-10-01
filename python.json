@@ -19,6 +19,14 @@
 		"description": "Simple class setup"
 	},
 
+	"Parameter": {
+		"prefix": "parameter",
+		"body": [
+			"${1/([A-Z])/_${1:/downcase}/g}${2: = ${3:default_value}}"
+		],
+		"description": "Function/method parameter"
+	},
+
 	"Method": {
 		"prefix": "method",
 		"body": [
@@ -71,6 +79,43 @@
 			"${1:from ${2:package} }import ${3:itemName}"
 		],
 		"description": "Import statement"
+	},
+
+	"With": {
+		"prefix": "with-setup",
+		"body": [
+			"with ${1:object} as ${2:alias}:",
+			"\t${3:pass}"
+		],
+		"description": ""
+	},
+
+	// Switch
+
+	"Import switch": {
+		"prefix": "switch-import",
+		"body": [
+			"from switch import Switch"
+		],
+		"description": "Import switch into document"
+	},
+
+	"Switch setup": {
+		"prefix": "switch-setup",
+		"body": [
+			"with Switch(${1:var_name}) as case:",
+			"\t${2:pass}"
+		],
+		"description": "Switch statement setup"
+	},
+
+	"Switch case statement": {
+		"prefix": "switch-case",
+		"body": [
+			"if case(${1:value}):",
+			"\t${2:pass}"
+		],
+		"description": "Case statement for the switch library"
 	},
 
 	// PyTest
