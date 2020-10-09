@@ -1,6 +1,5 @@
 {
 	// Core Python
-	
 	"Class": {
 		"prefix": "class-extended",
 		"body": [
@@ -9,16 +8,14 @@
 		],
 		"description": "Extended class snippet -- easier to ignore derivation"
 	},
-
 	"Constructor": {
 		"prefix": "ctor",
 		"body": [
 			"def __init__(self${2:, ${3:parameters}}):",
-			"    ${3/(, )?([^, ]+)/self.$2 = $2\n        /g}",
+			"    ${3/(, )?([^, ]+)/self.$2 = $2\n        /g}"
 		],
 		"description": "Simple class setup"
 	},
-
 	"Parameter": {
 		"prefix": "parameter",
 		"body": [
@@ -26,7 +23,6 @@
 		],
 		"description": "Function/method parameter"
 	},
-
 	"Method": {
 		"prefix": "method",
 		"body": [
@@ -35,7 +31,6 @@
 		],
 		"description": "Simple method definition"
 	},
-
 	"Function": {
 		"prefix": "function",
 		"body": [
@@ -44,7 +39,6 @@
 		],
 		"description": "Simple function definition"
 	},
-
 	"DI Class": {
 		"prefix": "di-class",
 		"body": [
@@ -56,7 +50,6 @@
 		],
 		"description": "Class with DI-related factory function"
 	},
-
 	"Variable": {
 		"prefix": "var",
 		"body": [
@@ -64,7 +57,6 @@
 		],
 		"description": "Simple variable definition"
 	},
-
 	"Constant": {
 		"prefix": "const",
 		"body": [
@@ -72,7 +64,6 @@
 		],
 		"description": "Simple constant definition"
 	},
-
 	"Import": {
 		"prefix": "import",
 		"body": [
@@ -80,7 +71,6 @@
 		],
 		"description": "Import statement"
 	},
-
 	"With": {
 		"prefix": "with-setup",
 		"body": [
@@ -89,9 +79,57 @@
 		],
 		"description": ""
 	},
-
+	// PyInquirer
+	"PyInquirer Import": {
+		"prefix": "pyinquirer-import",
+		"body": [
+			"from PyInquirer import prompt"
+		],
+		"description": "Import PyInquirer prompt function"
+	},
+	"PyInquirer Input": {
+		"prefix": "pyinquirer-input",
+		"body": [
+			"{",
+			"\t\"type\": \"input\",",
+			"\t\"name\": \"${1:variable_name}\",",
+			"\t\"message\": \"${2:message}\"",
+			"}"
+		],
+		"description": "PyInquirer input definition"
+	},
+	"PyInquirer List": {
+		"prefix": "pyinquirer-list",
+		"body": [
+			"{",
+			"\t\"type\": \"${1|list,rawlist|}\",",
+			"\t\"name\": \"${2:variable_name}\",",
+			"\t\"message\": \"${3:message}\",",
+			"\t\"choices\": ${4:[${5:choices}]}${6:,\n}",
+			"}"
+		],
+		"description": "PyInquirer list definition"
+	},
+	"PyInquirer Checkbox": {
+		"prefix": "pyinquirer-checkbox",
+		"body": [
+			"{",
+			"\t\"type\": \"checkbox\",",
+			"\t\"name\": \"${1:variable_name}\",",
+			"\t\"message\": \"${2:message}\",",
+			"\t\"choices\": ${3:[${4:choices}]}${5:,\n}",
+			"}"
+		],
+		"description": "PyInquirer checkbox definition"
+	},
+	"PyInquirer Validate": {
+		"prefix": "pyinquirer-validate-property",
+		"body": [
+			"\"validate\": ${1:lambda value: ${2:validationLogic}}"
+		],
+		"description": ""
+	},
 	// Switch
-
 	"Import switch": {
 		"prefix": "switch-import",
 		"body": [
@@ -99,7 +137,6 @@
 		],
 		"description": "Import switch into document"
 	},
-
 	"Switch setup": {
 		"prefix": "switch-setup",
 		"body": [
@@ -108,7 +145,6 @@
 		],
 		"description": "Switch statement setup"
 	},
-
 	"Switch case statement": {
 		"prefix": "switch-case",
 		"body": [
@@ -117,9 +153,7 @@
 		],
 		"description": "Case statement for the switch library"
 	},
-
 	// PyTest
-
 	"PyTest Test": {
 		"prefix": "pytest-test",
 		"body": [
@@ -132,7 +166,6 @@
 		],
 		"description": "PyTest test case"
 	},
-
 	"PyTest Assert": {
 		"prefix": "pytest-assert",
 		"body": [
@@ -140,9 +173,7 @@
 		],
 		"description": "PyTest test assertion"
 	},
-
 	// Doubles setup and use
-
 	"Test Double Import": {
 		"prefix": "test-double-doubles-import-doubles",
 		"body": [
@@ -150,7 +181,6 @@
 		],
 		"description": "Import doubles library for test double creation"
 	},
-
 	"Create Test Double": {
 		"prefix": "test-double-create-doubles",
 		"body": [
@@ -158,15 +188,13 @@
 		],
 		"description": "Create a new test double"
 	},
-
 	"Allow Test Double Method Call": {
 		"prefix": "test-double-allow-method-call-doubles",
 		"body": [
-			"allow(${1:test_double_name}).${2:method_name}.${3:${4|and_return_result_of,and_raise,with_args|}($0)}"
+			"allow(${1:test_double_name}).${2:method_name}.${3:${4|and_return,with_args,with_no_args,and_raise,and_return_result_of|}($0)}"
 		],
 		"description": "Add call-allow call to test double method"
 	},
-
 	"Expect Test Double Method Call": {
 		"prefix": "test-double-expect-method-call-doubles",
 		"body": [
@@ -174,9 +202,7 @@
 		],
 		"description": "Add call-expectation call to test double method"
 	},
-
 	// Approvals
-
 	"Approvals Import": {
 		"prefix": "approvals-import",
 		"body": [
@@ -186,7 +212,6 @@
 		],
 		"description": "Import necessary libs for approval verification"
 	},
-
 	"Approvals Verify": {
 		"prefix": "approvals-verify",
 		"body": [
