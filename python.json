@@ -81,6 +81,14 @@
 		],
 		"description": ""
 	},
+	"File Read/Write Setup": {
+		"prefix": "file-read-write-io",
+		"body": [
+			"with open(${1:file_path}, \"${2|r,w,rb,wb|}\") as ${3:alias}:",
+			"    ${4:pass}"
+		],
+		"description": "Setup for file read/write operations"
+	},
 	// PyInquirer
 	"PyInquirer Import": {
 		"prefix": "pyinquirer-import",
