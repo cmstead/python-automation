@@ -15,5 +15,11 @@ for template_name in template_list:
     if(os.path.isfile(destination) or os.path.isdir(destination)):
         shutil.rmtree(destination)
 
+    try:
+        shutil.rmtree(destination)
+    except:
+        pass # there probably isn't a file there
+
     print('Copying template: ' + template_name)
+
     shutil.copytree(source, destination)

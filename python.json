@@ -1,5 +1,91 @@
 {
 	// Core Python
+	"Import Built-in Module": {
+		"prefix": "import-built-in-module",
+		"body": [
+			"import ${1|os,json,functools|}"
+		],
+		"description": "Import built-in module"
+	},
+	"Run CLI Ccommand": {
+		"prefix": "run-cli-command",
+		"body": [
+			"os.system(\"$1\")"
+		],
+		"description": "run-cli-command"
+	},
+	"JSON Serialize": {
+		"prefix": "json-serialize",
+		"body": [
+			"json.dumps($1${2:, indent=${3|4,2|}})"
+		],
+		"description": "Serialize/encode JSON"
+	},
+	"JSON Deserialize": {
+		"prefix": "json-serialize",
+		"body": [
+			"json.loads($1)"
+		],
+		"description": "Deserialize/decode JSON"
+	},
+	"Path join": {
+		"prefix": "path-join",
+		"body": [
+			"os.path.realpath(os.path.join($1))"
+		],
+		"description": "Join path substrings"
+	},
+	"Current File Path (Directory)": {
+		"prefix": "current-file-path",
+		"body": [
+			"file_directory = os.path.dirname(os.path.realpath(__file__))"
+		],
+		"description": "Get current file path (directory)"
+	},
+	"Current Working Directory": {
+		"prefix": "cwd",
+		"body": [
+			"os.getcwd()"
+		],
+		"description": "Get current working directory"
+	},
+	"Variable": {
+		"prefix": "var",
+		"body": [
+			"${1/([A-Z])/_${1:/downcase}/g} = $2"
+		],
+		"description": "Simple variable definition"
+	},
+	"Constant": {
+		"prefix": "const",
+		"body": [
+			"${1/(.*)/${1:/upcase}/} = $2"
+		],
+		"description": "Simple constant definition"
+	},
+	"Import": {
+		"prefix": "import",
+		"body": [
+			"${1:from ${2:package} }import ${3:itemName}"
+		],
+		"description": "Import statement"
+	},
+	"With": {
+		"prefix": "with-setup",
+		"body": [
+			"with ${1:object} as ${2:alias}:",
+			"    ${3:pass}"
+		],
+		"description": ""
+	},
+	"File Read/Write Setup": {
+		"prefix": "file-read-write-io",
+		"body": [
+			"with open(${1:file_path}, \"${2|r,w,rb,wb|}\") as ${3:alias}:",
+			"    ${4:pass}"
+		],
+		"description": "Setup for file read/write operations"
+	},
 	"Class": {
 		"prefix": "class-extended",
 		"body": [
@@ -51,43 +137,6 @@
 			"    return $1($5)"
 		],
 		"description": "Class with DI-related (dependency injection) factory function"
-	},
-	"Variable": {
-		"prefix": "var",
-		"body": [
-			"${1/([A-Z])/_${1:/downcase}/} = $2"
-		],
-		"description": "Simple variable definition"
-	},
-	"Constant": {
-		"prefix": "const",
-		"body": [
-			"${1/(.*)/${1:/upcase}/} = $2"
-		],
-		"description": "Simple constant definition"
-	},
-	"Import": {
-		"prefix": "import",
-		"body": [
-			"${1:from ${2:package} }import ${3:itemName}"
-		],
-		"description": "Import statement"
-	},
-	"With": {
-		"prefix": "with-setup",
-		"body": [
-			"with ${1:object} as ${2:alias}:",
-			"    ${3:pass}"
-		],
-		"description": ""
-	},
-	"File Read/Write Setup": {
-		"prefix": "file-read-write-io",
-		"body": [
-			"with open(${1:file_path}, \"${2|r,w,rb,wb|}\") as ${3:alias}:",
-			"    ${4:pass}"
-		],
-		"description": "Setup for file read/write operations"
 	},
 	// PyInquirer
 	"PyInquirer Import": {
