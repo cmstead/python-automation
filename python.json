@@ -286,5 +286,31 @@
 			"verify(json.dumps(${1:result}, sort_keys=${2|True,False|}, indent=${3|2,4|}))"
 		],
 		"description": "Approvals verification expression"
+	},
+	"Shebang": {
+		"prefix": "shebang",
+		"body": [
+			"#!/usr/bin/env python${1:3.8}"
+		],
+		"description": "Scripting shebang"
+	},
+	"Script": {
+		"prefix": "script-template",
+		"body": [
+			"#!/usr/bin/env python${1:3.8}",
+			"",
+			"from os import system",
+			"import sys",
+			"",
+			"run_command = system",
+			"",
+			"def run_script():",
+			"    args = sys.argv[1:]",
+			"    run_command(${2:f\"echo hello\"})",
+			"",
+			"if __name__ == \"__main__\":",
+			"    run_script()"
+		],
+		"description": "Basic setup for scripting tasks"
 	}
 }
