@@ -1,6 +1,6 @@
 {
     "project_name": "",
-    "source_directory": "{{cookiecutter.package_name|replace('-', '_')}}",
+    "source_directory": "{{cookiecutter.project_name|replace('-', '_')}}",
     "author": "",
     "email": "",
     "github_username": "",

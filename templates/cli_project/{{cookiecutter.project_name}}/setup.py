@@ -5,12 +5,12 @@ CURRENT_DIR = pathlib.Path(__file__).parent
 README_CONTENT = (CURRENT_DIR / "README.md").read_text()
 
 setup(
-    name='{{cookiecutter.package_name}}',
+    name='{{cookiecutter.project_name}}',
     version='0.1.0',
     packages=["{{cookiecutter.source_directory}}"],
     author="{{cookiecutter.author}}",
     author_email="{{cookiecutter.email}}",
-    url="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.package_name}}#readme",
+    url="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}#readme",
     platforms=['any'],
     description="{{cookiecutter.description}}",
     license='{{cookiecutter.license}}',
@@ -21,7 +21,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "{{cookiecutter.package_name}} = {{cookiecutter.source_directory}}.__main__:main"
+            "{{cookiecutter.project_name}} = {{cookiecutter.source_directory}}.__main__:main"
         ]
     }
 )
