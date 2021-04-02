@@ -312,5 +312,13 @@
 			"    run_script()"
 		],
 		"description": "Basic setup for scripting tasks"
+	},
+	"Script Self Run": {
+		"prefix": "script-self-run",
+		"body": [
+			"if __name__ == \"__main__\":",
+			"    ${1:pass}"
+		],
+		"description": "Add script self-run condition"
 	}
 }
